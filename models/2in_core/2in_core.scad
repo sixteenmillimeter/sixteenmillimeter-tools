@@ -1,3 +1,4 @@
+time=0;
 module core (outerWidth) {
 	coreH = 16;
 	innerWidth = 15.3;
@@ -80,4 +81,4 @@ module core (outerWidth) {
 	}	
 }
 
-core(50);
+rotate([0,0, time]) core(50);

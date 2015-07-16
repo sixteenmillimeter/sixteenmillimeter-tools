@@ -1,3 +1,4 @@
+time = 0;
 module core_adapter () {
     $fn = 100;
 	difference () {
@@ -10,4 +11,4 @@ module core_adapter () {
 	}
 }
 
-core_adapter();
+rotate([0, 0, time]) core_adapter();
