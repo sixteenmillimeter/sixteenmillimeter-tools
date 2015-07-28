@@ -1,19 +1,19 @@
-time=0;
+                                                                                                                                                                                                          time=0;
 module core (outerWidth) {
 	coreH = 16;
 	innerWidth = 15.3;
 	outerWidth = outerWidth / 2;
     $fn = 100;
     
-	module cyl (R) {
-		cylinder(r = R, h = coreH, center = true);
+	module cyl (R, pad = 0) {
+		cylinder(r = R, h = coreH + pad, center = true);
 	}
 
-	module inner_core_shape (coreR, trans, cubeW, cubeL) {
+	module inner_core_shape (coreR, trans, cubeW, cubeL, pad = 0) {
 		union () {
-			cyl(coreR);
+			cyl(coreR, pad);
 			translate([trans, 0, 0]) {
-				cube([cubeW, cubeL, coreH], center = true);
+				cube([cubeW, cubeL, coreH + pad], center = true);
 			}
 		}
 	}
@@ -21,7 +21,7 @@ module core (outerWidth) {
 	module inner_core () {
 		difference () {
 			inner_core_shape(innerWidth, innerWidth + .5, 6, 7);
-			inner_core_shape(innerWidth - 2, innerWidth - .5, 4, 4);
+			inner_core_shape(innerWidth - 2, innerWidth - .5, 4, 4, 2);
 		}
 	}
 	module clip () {
@@ -39,7 +39,7 @@ module core (outerWidth) {
 					cube([8, 4, coreH], center = true);
 				}
 				translate([3.9, 0, 0]) {
-					cube([6, 8, coreH], center = true);
+					cube([6, 8, coreH + 1], center = true);
 				}
 			}
 		}
@@ -50,7 +50,7 @@ module core (outerWidth) {
 			union () {
 				difference () {
 					cyl(outerWidth);
-					cyl(outerWidth - 2);
+					cyl(outerWidth - 2, 1);
 				}
 				outer_clip();
 			}
