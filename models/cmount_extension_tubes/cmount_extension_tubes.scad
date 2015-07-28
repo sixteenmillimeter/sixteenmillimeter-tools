@@ -24,7 +24,7 @@ module cmount_male(len) {
 
 		difference () {
 			translate([0, 0, -(len / 2) - 1]) cylinder(r = f_outer_d / 2, h = 2, center = true);
-			translate([0, 0, -(len / 2) - 1]) cylinder(r1 = f_inner_d / 2, r2 = inner_d / 2, h = 2, center = true);
+			translate([0, 0, -(len / 2) - 1]) cylinder(r1 = f_inner_d / 2, r2 = inner_d / 2, h = 3, center = true);
 		}	
 	}
 }
