@@ -1,3 +1,5 @@
+time = 0;
+
 module hot_shoe_mount() {
 
 	difference() {
@@ -5,11 +7,11 @@ module hot_shoe_mount() {
 		cube([20,14.8,17.5], center=true);
 
 		translate([0,-7.6,0]) {
-			cube([9.4,2.5,17.5], center=true);
+			cube([9.4,2.5,17.6], center=true);
 		}
 	
 		translate([-8.125,-0.60,0]) {
-			cube([3.99,10,17.5], center=true);
+			cube([3.99,10,17.6], center=true);
 		}
 	
 		translate([-9.65,-6.5,0]) {
@@ -18,7 +20,7 @@ module hot_shoe_mount() {
 	
 	
 		translate([8.125,-0.60,0]) {
-			cube([3.99,10,17.5], center=true);
+			cube([3.99,10,17.6], center=true);
 		}
 	
 		translate([9.65,-6.5,0]) {
@@ -29,4 +31,4 @@ module hot_shoe_mount() {
 	}
 }
 
-hot_shoe_mount();
+rotate([0, 0, time]) hot_shoe_mount();
