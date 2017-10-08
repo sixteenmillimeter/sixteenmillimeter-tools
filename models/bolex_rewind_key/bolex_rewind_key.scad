@@ -1,4 +1,5 @@
 $fn = 90;
+time=0;
 //NOT RECOMMENDED FOR PLA OR ABS
 
 module key () {
@@ -111,4 +112,4 @@ module bolex_rewind_key ( DECOYS = false) {
     }
 }
 
-bolex_rewind_key();
+rotate([0, 0, time]) bolex_rewind_key();

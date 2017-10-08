@@ -1,4 +1,6 @@
 $fn = 90;
+time = 0;
+
 include <./knurledFinishLib_v2.scad>;
 
 module bolex_rewind_knurled_handle () {
@@ -25,5 +27,7 @@ module bolex_rewind_knurled_handle_SPLIT (piece = 0) {
   }
 }
 
-bolex_rewind_knurled_handle_SPLIT(0);
-translate([10, 0, 0]) bolex_rewind_knurled_handle_SPLIT(1);
+rotate([0, 0, time]) {
+  bolex_rewind_knurled_handle_SPLIT(0);
+  translate([10, 0, 0]) bolex_rewind_knurled_handle_SPLIT(1);
+}

@@ -1,3 +1,5 @@
+time=0;
+
 module cmount_rear_cap () {
     $fn = 200;
     ID = 25.26;
@@ -10,4 +12,4 @@ module cmount_rear_cap () {
     }
 }
 
-cmount_rear_cap();
+rotate([0, 0, time]) cmount_rear_cap();
