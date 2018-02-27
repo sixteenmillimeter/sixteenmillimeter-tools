@@ -24,12 +24,11 @@ module lomo_bottom_screw () {
     }
 }
 difference() {
-    //color("green") import("C:\\Users\\mmcwilliams\\Documents\\3DPRINT\\lomo_bottom_screw_half.stl");
-    //color("blue") translate([36.9, -3.2, 0]) import("C:\\Users\\mmcwilliams\\Documents\\3DPRINT\\lomo_part.stl");
-    import("~/Downloads/lomo_spindle_3.stl");
+    //color("green")
+    //import("~/Downloads/lomo_spindle_3_fixed.stl");
     //translate([200, 0, 0]) cube([400, 400, 400], center = true);
 }
 rotate([0, 0, t]) difference() {
-    //lomo_bottom_screw();
-    //translate([-100, 0, 0])cube([200, 200, 200], center = true);
+    lomo_bottom_screw();
+    translate([-100, 0, 0])cube([200, 200, 200], center = true);
 }
