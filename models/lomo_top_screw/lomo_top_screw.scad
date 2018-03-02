@@ -40,7 +40,8 @@ module lomo_top_screw () {
 		cylinder(r1 = 16/ 2, r2 = 13 / 2, h = 54.5, $fn = 100);
 	}
 	//screw
-	translate([0, 0, -36]) metric_thread (diameter=13.8, pitch=1.5, length=20.5);
+	translate([0, 0, -36]) metric_thread (diameter=13.6, pitch=1.5,thread_size = 1.6, length = 21);
 }
 
-rotate([0, 0, t]) lomo_top_screw();
+//rotate([0, 0, t]) lomo_top_screw();
+metric_thread (diameter=13.6, pitch=1.5,thread_size = 1.6, length = 21);
