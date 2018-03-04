@@ -46,14 +46,14 @@ difference() {
     //color("green")
 	//center
 	translate([0, 0, 29]) lomo_bottom_screw();
-    //translate([37, -3.25, 0]) import("./lomo_part_fixed.stl");
+ 
     translate([-25, 0, 29]) cube([50, 50, 100], center = true);
 }
 
 //translate([0, 0, 7]) cylinder(r = 13.6 / 2, h = 20, center = true, $fn = 100);
         
 translate([0, 0, -20]) rotate([0, 0, t]) difference() {
-   // rotate([0, 180, 0]) import("../lomo_top_screw/lomo_top_screw.stl");
+
     //translate([-100, 0, 0])cube([200, 200, 200], center = true);
 }
 
