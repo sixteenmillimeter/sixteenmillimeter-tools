@@ -9,7 +9,7 @@ ROUND = 8;
 HANDLE_D = 13.25;
 NOTCHES = 17;
 NOTCH = 1.5;
-FINE = 20;
+FINE = 200;
 
 module lomo_top_screw () {
     difference () {
@@ -26,7 +26,7 @@ module lomo_top_screw () {
         //translate([45, 0, 0]) cube([90, 90, 90], center = true);
     //}
         
-        //bevel
+        //cup bevel
         //inner bevel
         translate([0, 0, (H / 2) - ROUND - 1]) cylinder(r1 = (D / 2) - 2.5, r2 = (D / 2) - 2.5 + 1, h = 1, center = true, $fn = FINE);
         //outer bevel
@@ -36,7 +36,10 @@ module lomo_top_screw () {
                 cylinder(r2 = (D / 2) - .8, r1 = (D / 2) - .8 + 1, h = 1, center = true, $fn = FINE);
             }
         }
+        //hole
+        translate([21, 0, -10]) cylinder(r = 3 / 2, h = 40, center = true, $fn = 40);
     }
+    
     //reference cylinder
     //translate([0, 0, -6.6]) color("red") cylinder(r = 50 / 2, h = 19.57, center = true);
 
@@ -60,7 +63,15 @@ module lomo_top_screw () {
                     }
                 }
 		    }
+            //bevel handle
+           translate([0, 0, 54.01]) {
+                difference () {
+                    cylinder(r = 13 / 2, h = 1, center = true);
+                    cylinder(r1 = 12.5 / 2, r2 = 11.5 / 2, h = 1.01, center = true);
+                }
+            }
         }
+
 	}
     //attach handel with pyramid cylinder
     translate ([0, 0, -13.7]) {
@@ -69,7 +80,7 @@ module lomo_top_screw () {
     //plate under cup
     translate([0, 0, -17.75]) cylinder(r = 31.5 / 2, h = 1, center = true, $fn = FINE);
 	//screw
-	//translate([0, 0, -37.5]) metric_thread (diameter=13.6, pitch=1.5 ,thread_size = 1.6, length = 21);
+	translate([0, 0, -37.5]) metric_thread (diameter=13.6, pitch=1.5 ,thread_size = 1.6, length = 21);
     //cylinder plug
     translate([0, 0, -37.5 + (21 / 2) - 1]) cylinder(r = 12 / 2, h = 21, center = true, $fn = FINE);
 }
