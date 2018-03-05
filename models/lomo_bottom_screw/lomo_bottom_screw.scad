@@ -35,7 +35,7 @@ module lomo_bottom_screw () {
 
     difference () {
         //outer screw
-        //translate([0, 0, -7.1]) metric_thread (diameter=10, pitch=1.5, length=27.1);
+        translate([0, 0, -7.1]) metric_thread (diameter=10, pitch=1.5, length=27.1);
         //taper top of screw
         translate([0, 0, 19]) difference() {
             cylinder(r = 8, h = 3.5, center = true, $fn = FINE);
@@ -50,7 +50,7 @@ difference() {
 	//center
 	translate([0, 0, 29]) lomo_bottom_screw();
  
-    translate([-25, 0, 29]) cube([50, 50, 100], center = true);
+    //translate([-25, 0, 29]) cube([50, 50, 100], center = true);
 }
 
 //translate([0, 0, 7]) cylinder(r = 13.6 / 2, h = 20, center = true, $fn = 100);
