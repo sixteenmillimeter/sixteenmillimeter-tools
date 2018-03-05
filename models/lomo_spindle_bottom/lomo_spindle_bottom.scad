@@ -53,7 +53,7 @@ module outer_screw (LEN) {
 	}
 }
 
-module lomo_bottom_screw (ALT = false, HEX = false) {
+module lomo_spindle_bottom (ALT = false, HEX = false) {
 	OD = 13.6 + .5;
 	PITCH = 1.5;
 	THREAD = 1.6;
@@ -85,6 +85,6 @@ module lomo_bottom_screw (ALT = false, HEX = false) {
     
 }
 
-translate([0, 0, 29]) rotate([0, 0, t]) lomo_bottom_screw();
+translate([0, 0, 29]) rotate([0, 0, t]) lomo_spindle_bottom();
 
 
