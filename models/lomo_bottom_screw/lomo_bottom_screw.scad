@@ -27,8 +27,11 @@ module lomo_bottom_screw () {
         
         //negative plug (reference)
         //translate([0, 0, -20]) cylinder(r = 12 / 2, h = 20, center = true, $fn = FINE);
-        translate([0, 0, -30]) metric_thread (diameter=13.6, pitch=1.5 ,thread_size = 1.6, length = 20);
-    }
+        translate([0, 0, -30]) {
+            metric_thread (diameter=13.6 + .5, pitch=1.5, thread_size = 1.6, length = 20);
+            translate([0, 0, 0.25]) metric_thread (diameter=13.6 + .5, pitch=1.5, thread_size = 1.6, length = 20);
+        }
+   }
 
     difference () {
         //outer screw
@@ -55,6 +58,10 @@ difference() {
 translate([0, 0, -20]) rotate([0, 0, t]) difference() {
 
     //translate([-100, 0, 0])cube([200, 200, 200], center = true);
+}
+
+translate([0, 0, -30]) {
+    //metric_thread (diameter=13.6, pitch=1.5 ,thread_size = 1.6, length = 20);
 }
 
 
