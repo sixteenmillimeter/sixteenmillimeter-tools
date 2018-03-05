@@ -19,7 +19,7 @@ module base () {
     }
 }
 
-module lomo_bottom_screw () {
+module lomo_bottom_screw (LEN = 27.1) {
     difference () {
         base();
         //negative cylinder (reference)
@@ -27,23 +27,25 @@ module lomo_bottom_screw () {
         
         //negative plug (reference)
         //translate([0, 0, -20]) cylinder(r = 12 / 2, h = 20, center = true, $fn = FINE);
-        translate([0, 0, -30]) {
-            metric_thread (diameter=13.6 + .5, pitch=1.5, thread_size = 1.6, length = 20);
-            translate([0, 0, 0.25]) metric_thread (diameter=13.6 + .5, pitch=1.5, thread_size = 1.6, length = 20);
+        translate([0, 0, -30]) union() {
+            metric_thread (diameter=13.6 + .5, pitch=1.5, thread_size = 1.6, length = 21);
+            translate([0, 0, 0.2]) metric_thread (diameter=13.6 + .5, pitch=1.5, thread_size = 1.6, length = 21);
         }
    }
 
     difference () {
         //outer screw
-        translate([0, 0, -7.1]) metric_thread (diameter=10, pitch=1.5, length=27.1);
+        translate([0, 0, -7.1]) metric_thread (diameter=10, pitch=1.5, length=LEN);
+        translate([0, 0, 26]) cylinder(r = 8, h = 5, center = true, $fn = FINE);
         //taper top of screw
-        translate([0, 0, 19]) difference() {
-            cylinder(r = 8, h = 3.5, center = true, $fn = FINE);
-            cylinder(r1 = 6, r2 = 3, h = 4.5, center = true, $fn = FINE);
+        translate([0, 0, LEN - 4.2]) difference() {
+            cylinder(r = 8, h = 3, center = true, $fn = FINE);
+            cylinder(r1 = 6, r2 = 3, h = 3.01, center = true, $fn = FINE);
         }
         //hollow center
         cylinder(r = 3.8 / 2, h = 100, center = true, $fn = 60);
     }
+    
 }
 difference() {
     //color("green")
