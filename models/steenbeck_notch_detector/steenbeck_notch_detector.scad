@@ -93,16 +93,19 @@ module steenbeck_notch_detector () {
         union () {
             translate([0, 0, 1.5]) rotate([90, 0, 90]) rounded_cube([40, 43, 18], d = 8, center = true, $fn = 60);
             translate([0, 0, 1.5 - 12.5]) rotate([90, 0, 90]) cube([40, 43, 18], center = true, $fn = 60);
-            translate([0, 0, -20 + 3 -  (28.75 - 16)]) rounded_cube([40, 40, 6], d = 6, center = true, $fn = 60);
+            translate([0, 0, -20 + 3 -  (28.75 - 16)]) cube([6, 40, 6],  center = true, $fn = 60);
         }
         translate([0, 0, -20 + 8.99]) {
             difference() {
                 cube([10, 50 + 1, 25.01], center = true);
             }
         }
-        translate([0, 0, -18]) cube([8, 50 + 1, 18], center = true);
+        //key void
+        translate([0, 0, -20 + 3 -  (28.75 - 16)]) cube([60, 6, 6],  center = true, $fn = 60);
+        //inner void
+        translate([0, 0, -25]) cube([8, 50 + 1, 18], center = true);
         //remove half
-        translate([25 , 0, 0]) cube([50, 50, 70], center = true);
+         translate([25 , 0, 0]) cube([50, 50, 70], center = true);
         //void for microswitch
         translate([0, 0, 21]) cube([10, 40 + 1, 40], center = true);
         //remove sides
@@ -141,7 +144,11 @@ module notch_cup () {
     }
 }
 
+module steenbeck_notch_detector_base() {
+    
+}
+
 //rotate([0, -90, 0]) film_16mm();
 //microswitch([0, 0, 25], [0, 90, 180]);
-//translate([0, 0, 20 - 8]) color("blue") steenbeck_notch_detector();
-notch_cup();
+translate([0, 0, 20 - 8]) color("blue") steenbeck_notch_detector();
+//notch_cup();
