@@ -114,41 +114,90 @@ module steenbeck_notch_detector () {
         //void for arm
         translate([0, -10.01, -2]) cube([5, 20, 10], center = true);
 
+        //void for bolts that mount microswitch
         translate([0, 22.5 / 2, 14 - 5]) {
             rotate([90, 0, 90]) cylinder(r = 3.25 / 2, h = 40, center = true, $fn = 50);
             translate([0, 0, -3.25 / 2]) cube([40, 3.25, 4], center = true);
             translate([0, 0, -4]) rotate([90, 0, 90]) cylinder(r = 3.25 / 2, h = 40, center = true, $fn = 50);
 
         }
+        //
         translate([0, -22.5 / 2, 14 + 5]) {
             rotate([90, 0, 90]) cylinder(r = 3.25 / 2, h = 40, center = true, $fn = 50);
             translate([0, 0, -3.25 / 2]) cube([40, 3.25, 4], center = true);
             translate([0, 0, -4]) rotate([90, 0, 90]) cylinder(r = 3.25 / 2, h = 40, center = true, $fn = 50);
         }
     }
+    //modified idle roller
     translate([-8, 14.5, -22]) difference() {
         idle_roller();
         translate([-25, -25, 0]) cube([50, 50, 50], center = true);
+    }
+    difference () {
+        translate([-15, 0, -17]) union () {
+            cylinder(r = 4, h = 19.5, center = true, $fn = 40);
+            translate([5, 0, 0]) cube([10, 8, 19.5], center = true);
+        }
+    //void for bolt
+        translate([-15, 0, -19.9]) cylinder(r = 2.35, h = 26, center = true, $fn = 40);
     }
 }
 
 module notch_cup () {
     difference() {
-        cube([7, 10, 3], center = true);
+        translate([0, 0.5, 0]) cube([7, 13, 3], center = true);
         //arm void
-        cube([4,75, 10, .9], center = true);
+        cube([4.75, 15, .8], center = true);
     }
-    translate([0, -3, -1.5]) difference() {
-        cube([7, 5, 6], center = true);
-        translate([0, 0, -3.5]) rotate([90, 0, 0]) cylinder(r = 5 / 2, h = 5 + 1, center = true, $fn = 40);
+    translate([0, -3, -1.5]) {
+        intersection () {
+            cube([7, 6, 6], center = true);
+            translate([0, 0, .5]) rotate([0, 90, 0]) cylinder(r = 3, h = 10, center = true, $fn = 80);
+        }
+    }
+    translate([2, -3, -1.5]) rotate([0, 90, 0]) {
+        difference () {
+            cylinder(r = 4.5, h = 3, center = true, $fn = 100);
+            translate([-5, 0, 0]) cube([8, 8, 8], center = true);
+            translate([0, -7, 0]) cube([8, 8, 8], center = true);
+            translate([0, 7, 0]) cube([8, 8, 8], center = true);
+            translate([0, 0, -2]) rotate([0, -5, 0]) cube([12, 12, 2], center = true);
+        }
+    }
+    translate([-2, -3, -1.5]) rotate([0, 90, 0]) {
+        difference () {
+            cylinder(r = 4.5, h = 3, center = true, $fn = 100);
+            translate([-5, 0, 0]) cube([8, 8, 8], center = true);
+            translate([0, -7, 0]) cube([8, 8, 8], center = true);
+            translate([0, 7, 0]) cube([8, 8, 8], center = true);
+            translate([0, 0, 2]) rotate([0, 5, 0]) cube([12, 12, 2], center = true);
+        }
     }
 }
 
 module steenbeck_notch_detector_base() {
-    
+    difference () {
+        rounded_cube([80, 50, 6], d = 8, center = true);
+        translate([10, 0, 58]) scale([1.05, 1.05, 2]) steenbeck_notch_detector();
+        translate([-5, 0, -3.01]) {
+            hex(r = 9/2, h = 3);
+            cylinder(r = 5.25 / 2, h = 20, center = true, $fn = 40);
+        }
+    }
 }
 
+module steenbeck_notch_detector_base_dxf () {
+        projection(cut = true) translate([0, 0, -1.5])   steenbeck_notch_detector_base();
+    projection(cut = true) translate([0, 60, 1.5])   steenbeck_notch_detector_base();
+}
+
+//not for printing
 //rotate([0, -90, 0]) film_16mm();
 //microswitch([0, 0, 25], [0, 90, 180]);
-translate([0, 0, 20 - 8]) color("blue") steenbeck_notch_detector();
+
+//translate([0, 0, 20 - 8]) color("blue") steenbeck_notch_detector();
+//translate([-10, 0, -17.5]) steenbeck_notch_detector_base();
 //notch_cup();
+
+//laser cutting
+steenbeck_notch_detector_base_dxf();
