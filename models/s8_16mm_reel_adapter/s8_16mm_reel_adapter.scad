@@ -1,6 +1,10 @@
 
 time = 0;
-
+/**
+ * Super-8 to 16mm Reel Adapter. Designed to be used on a JK optical
+ * printer, but will work with rewinds as well.
+ *
+ **/
 module s8_16mm_reel_adapter () {
     BOTTOM_D = 20.53;
     BOTTOM_H = 2;
