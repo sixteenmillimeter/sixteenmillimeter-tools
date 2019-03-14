@@ -10,7 +10,7 @@ module s8_16mm_reel_adapter () {
     BOTTOM_H = 1.5;
     D = 12.72;
     H = 10;
-    SQUARE = 8.1;
+    SQUARE = 8.2;
     TAPER = 1.4;
     PEG_H = 9;
     PEG_L = 3.18;
@@ -24,9 +24,10 @@ module s8_16mm_reel_adapter () {
             translate([0, 0, (BOTTOM_H / 2) + H / 2]) cylinder(r = D / 2, h = H, center = true);
             translate([0, 0, (BOTTOM_H / 2) + H + (TAPER / 2)]) cylinder(r1 = D / 2, r2 = (D / 2) - TAPER, h = TAPER, center = true);
         }
-        cube([SQUARE, SQUARE, 60], center = true);
+        rotate([0, 0, 45]) cube([SQUARE, SQUARE, 60], center = true);
+        translate([0, 10, 0]) cube([3, 20, 60], center = true);
     }
-    for (i = [0 : 2]) {
+    for (i = [1 : 2]) {
         rotate([0, 0, i * 120]) translate([0, (D / 2) + (PEG_L / 2) - (PEG_W / 2), (BOTTOM_H / 2) + (PEG_H / 2)]) cube([PEG_W, PEG_L, PEG_H], center = true);
         rotate([0, 0, i * 120]) translate([0, (D / 2) + (PEG_L / 2) + (PEG_W / 3), (BOTTOM_H / 2) + (PEG_H / 2)]) cylinder(r = PEG_W / 2, h = PEG_H, center = true, $fn = 40);
     }
