@@ -1,5 +1,5 @@
 /**
- * Sprocketed Roller Disc
+ * Elmo-CL Sprocketed Roller Disc
  **/
 
 time = 0;
