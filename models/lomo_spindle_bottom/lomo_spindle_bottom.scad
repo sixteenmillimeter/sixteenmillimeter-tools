@@ -1,4 +1,4 @@
-t = 0;
+time = 0;
 include <../../libraries/threads.scad>;
 
 //RESOLUTION
@@ -85,6 +85,6 @@ module lomo_spindle_bottom (ALT = false, HEX = false) {
     
 }
 
-translate([0, 0, 29]) rotate([0, 0, t]) lomo_spindle_bottom();
+translate([0, 0, 29]) rotate([0, 0, time]) lomo_spindle_bottom();
 
 
