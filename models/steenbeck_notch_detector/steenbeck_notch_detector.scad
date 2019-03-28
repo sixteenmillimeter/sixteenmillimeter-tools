@@ -1,3 +1,4 @@
+time = 0;
 IN = 25.4;
 
 module hex (r = 1, h = 1, center = false) {
@@ -195,7 +196,7 @@ module steenbeck_notch_detector_base_dxf () {
 //rotate([0, -90, 0]) film_16mm();
 //microswitch([0, 0, 25], [0, 90, 180]);
 
-//translate([0, 0, 20 - 8]) color("blue") steenbeck_notch_detector();
+translate([0, 0, 20 - 8]) rotate([0, 0, time]) steenbeck_notch_detector();
 //translate([-10, 0, -17.5]) steenbeck_notch_detector_base();
 //notch_cup();
 

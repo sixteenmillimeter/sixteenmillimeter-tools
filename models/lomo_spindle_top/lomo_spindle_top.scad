@@ -1,4 +1,4 @@
-t = 0;
+time = 0;
 include <../../libraries/threads.scad>;
 include <../../libraries/Triangles.scad>;
 
@@ -99,4 +99,4 @@ module lomo_spindle_top () {
     }
 }
 
-rotate([0, 0, t]) lomo_spindle_top();
+rotate([0, 0, time]) lomo_spindle_top();

@@ -66,4 +66,4 @@ module sprocketed_roller (SPROCKETS = 8) {
     }
 }
 
-sprocketed_roller();
+rotate([0, 0, time]) sprocketed_roller();
