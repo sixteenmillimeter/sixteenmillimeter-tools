@@ -110,7 +110,8 @@ module handle_mount () {
         cylinder(r = HANDLE_MOUNT_BOLT_D / 2, h = 10, center = true, $fn = 50);
     }
 }
-//platter();
+platter();
 //projection() platter();
-//bolt_hex_voids();
-handle_mount();
+translate([0, 0, 10]) bearing_holder();
+bolt_hex_voids();
+translate([0, 0, -10])handle_mount();
