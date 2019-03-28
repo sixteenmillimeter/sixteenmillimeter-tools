@@ -1,0 +1,36 @@
+/**
+ * Variables for the Minox16 camera
+ **/
+
+$fn = 150;
+
+SPACING = 42;
+WALL_THICKNESS = 1.25 + .5;
+
+PLANE_BACK = 1.55;
+
+CART_H = 16.85 + .75;
+
+FEED_D = 19.14;
+TAKEUP_D = 22.04;
+
+TAKEUP_OFFSET_Y = -(TAKEUP_D - FEED_D) / 2;
+
+CONNECT_X = SPACING - (TAKEUP_D / 2) - (FEED_D / 2) + 2;
+CONNECT_Y = 8.85;
+CONNECT_Z = 1.3;
+
+CONNECT_OFFSET_X = ((TAKEUP_D / 2) - (FEED_D / 2)) / 2;
+CONNECT_OFFSET_Y = (FEED_D / 2) - (CONNECT_Y / 2) - 5.02;
+CONNECT_OFFSET_Z = -(CART_H / 2) + (CONNECT_Z / 2);
+
+FILM_NEG_Y = .75;
+
+FILM_NEG_OFFSET_Y = 8.5;
+
+CAP_LIP_H = 5.92;
+CAP_LIP = .56;
+CAP_THICKNESS = .5;
+
+TOP_H = 1;
+
