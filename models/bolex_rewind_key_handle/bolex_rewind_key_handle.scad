@@ -1,7 +1,7 @@
 $fn = 90;
 time = 0;
 
-include <./knurledFinishLib_v2.scad>;
+include <../../libraries/knurledFinishLib_v2.scad>;
 
 module bolex_rewind_knurled_handle () {
   difference () {
@@ -14,12 +14,12 @@ module bolex_rewind_knurled_handle_SPLIT (piece = 0) {
   difference () {
     bolex_rewind_knurled_handle();
     if (piece == 0) {
-      translate([50, 0, 0]) cube([100, 100, 100], center = true);
+      translate([15, 0, 0]) cube([30, 30, 41], center = true);
       translate([0, 3.7, 13.75 / 2]) cube([2, 2, 5], center = true);
       translate([0, -3.7, 13.75 / 2]) cube([2, 2, 5], center = true);
     } else if (piece == 1) {
       difference () {
-        translate([-50, 0, 0]) cube([100, 100, 100], center = true);
+        translate([-15, 0, 0]) cube([30, 30, 41], center = true);
         translate([0, 3.7, 13.75 / 2]) cube([1.8, 1.8, 4.8], center = true);
         translate([0, -3.7, 13.75 / 2]) cube([1.8, 1.8, 4.8], center = true);
       }
