@@ -2,7 +2,7 @@
 	"title" : "bipack",
 	"repo" : "https://github.com/sixteenmillimeter/bipack",
 	"link" : "/projects/bipack",
-	"readme" : "https://raw.githubusercontent.com/sixteenmillimeter/bipack/master/Readme.md",
+	"readme" : "https://raw.githubusercontent.com/sixteenmillimeter/bipack/master/README.md",
 	"image" : "/img/bipack.png",
 	"gif" : "/img/bipack.gif"
 }
