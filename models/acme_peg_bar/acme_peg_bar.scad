@@ -123,4 +123,4 @@ module three_piece_animation_peg_bar () {
 
 //small_printer_animation_peg_bar();
 //three_piece_animation_peg_bar();
-rotate(0, 0, time) animation_peg_bar();
+rotate([0, 0, time]) animation_peg_bar();
