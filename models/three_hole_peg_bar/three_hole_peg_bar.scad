@@ -25,8 +25,8 @@ module rounded_bar (arr = [50, 10, 10], fn = 60) {
 module animation_peg_bar () {
     rounded_bar([L, W, H], $fn);
     translate([0, 0, (CENTER_H / 2) - .5]) round_peg(CENTER_D, CENTER_H);
-    translate([(SIDE_SPACE / 2), 0, (CENTER_H / 2) + .3 ]) round_peg(CENTER_D, CENTER_H);
-    translate([-(SIDE_SPACE / 2), 0, (CENTER_H / 2) + .3 ]) round_peg(CENTER_D, CENTER_H);
+    translate([(SIDE_SPACE / 2), 0, (CENTER_H / 2) ]) round_peg(CENTER_D, CENTER_H);
+    translate([-(SIDE_SPACE / 2), 0, (CENTER_H / 2) ]) round_peg(CENTER_D, CENTER_H);
 }
 
 module round_peg (D = 6, H = 9) {
