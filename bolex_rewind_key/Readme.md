@@ -14,4 +14,4 @@ Something that's being tried, with the [elmo_cl_sprocketed_roller_sprocket_disc]
 
 ### [Download SCAD](./16mm_sprocketed_roller.scad/download)
 
-### [Buy on Shapeways](https://links.sixteenmillimeter.com/SK66qWYM)
+### [Buy on Shapeways](https://links.sixteenmillimeter.com/7Uxx0FE8)

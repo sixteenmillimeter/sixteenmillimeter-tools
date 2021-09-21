@@ -81,4 +81,4 @@ module core (outerWidth) {
 	}	
 }
 
-rotate([0,0, time]) core(50);
+core(50);

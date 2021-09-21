@@ -1,5 +1,3 @@
-time = 0;
-
 /**
  * 16mm roller with parametric inputs.
  * TODO: Make actually parametric
@@ -66,4 +64,4 @@ module sprocketed_roller (SPROCKETS = 8) {
     }
 }
 
-rotate([0, 0, time]) sprocketed_roller();
+sprocketed_roller();
