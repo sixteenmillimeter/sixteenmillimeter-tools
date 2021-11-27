@@ -1,7 +1,7 @@
 $fn = 90;
 time = 0;
 
-include <../../libraries/knurledFinishLib_v2.scad>;
+include <../libraries/knurledFinishLib_v2.scad>;
 
 module bolex_rewind_knurled_handle () {
   difference () {
