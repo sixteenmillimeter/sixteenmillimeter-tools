@@ -7,7 +7,6 @@
 ![Bolex Rewind Key Handle](./bolex_rewind_key.jpg)
 
 Related to:
-
 * [bolex_rewind_key](../bolex_rewind_key)
 
 ### [Download STL](./bolex_rewind_key_handle.stl/download)

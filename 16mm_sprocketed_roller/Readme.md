@@ -4,7 +4,7 @@
 
 # 16mm Sprocketed Roller
 
-![16mm Sprocketed Roller](./16mm_sprocketed_roller.png)
+![16mm Sprocketed Roller](./16mm_sprocketed_roller.jpg)
 
 This is a (soon-to-be) parametric sprocketed roller for 16mm film. Modeled after the rollers on the JK optical printer gate, it's designed for actively moving film. It requires a high-detail printer to make in a useful form.
 

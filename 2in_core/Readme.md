@@ -6,7 +6,7 @@
 
 ![2inch Core for 16mm](./2in_core.jpg)
 
-
+2in/50mm core for 16mm film. 
 
 ### [Download STL](./2in_core.stl/download)
 
