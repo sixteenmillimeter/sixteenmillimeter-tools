@@ -1,4 +1,7 @@
 # 16mm tools
+
+#### This project is deprecated. Please instead go to [https://git.sixteenmillimeter.com/modules/](https://git.sixteenmillimeter.com/modules/)
+
 ------------
 
 ### [Repo URL: https://git.sixteenmillimeter.com/16mm/sixteenmillimeter-tools](https://git.sixteenmillimeter.com/16mm/sixteenmillimeter-tools)
